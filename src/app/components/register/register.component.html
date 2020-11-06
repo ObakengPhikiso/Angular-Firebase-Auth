@@ -1,0 +1,31 @@
+<form [formGroup]="form" class="mt-5">
+
+    <div class="form-group">
+        <label for="name">name</label>
+        <input type="text" class="form-control" formControlName="name" aria-describedby="nameHelpId" placeholder="">
+        <small id="nameHelpId" class="form-text text-muted">Help text</small>
+    </div>
+
+    <div class="form-group">
+        <label for="surname">surname</label>
+        <input type="text" class="form-control" formControlName="surname" aria-describedby="surnameHelpId"
+            placeholder="">
+        <small id="surnameHelpId" class="form-text text-muted">Help text</small>
+    </div>
+
+    <div class="form-group">
+        <label for="email">email</label>
+        <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelpId" placeholder="">
+        <small id="emailHelpId" class="form-text text-muted">Help text</small>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" formControlName="password">
+    </div>
+    <button type="submit" (click)="register(form.value)" class="btn btn-primary">Register</button>
+</form>
+<div class="row mt-5">
+    <div class="col">
+        <a [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a>
+    </div>
+</div>

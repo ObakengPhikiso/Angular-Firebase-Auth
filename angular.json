@@ -121,8 +121,16 @@
               "devServerTarget": "firebase-auth:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "firebase-auth"
+    }
+  },
+  "defaultProject": "firebase-auth",
+  "cli": {
+    "analytics": "090f3cc0-c2f4-4a5d-aacb-4a2f4516de9b"
+  }
 }

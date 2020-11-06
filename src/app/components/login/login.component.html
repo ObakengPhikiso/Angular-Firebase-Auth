@@ -1,0 +1,17 @@
+<form [formGroup]="form" class="mt-5">
+    <div class="form-group">
+        <label for="email">email</label>
+        <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelpId" placeholder="">
+        <small id="emailHelpId" class="form-text text-muted">Help text</small>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" formControlName="password">
+    </div>
+    <button type="submit" (click)="login(form.value)" class="btn btn-primary">Login</button>
+</form>
+<div class="row mt-5">
+    <div class="col">
+        <a [routerLink]="['/register']" routerLinkActive="router-link-active">Register</a>
+    </div>
+</div>

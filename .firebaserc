@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "spu-form": {
+      "hosting": {
+        "firebase-auth": [
+          "spu-form"
+        ]
+      }
+    }
+  }
+}
