@@ -4,7 +4,7 @@
     position: absolute;
     top: 60%;
     left: 50%;
-    height: 1400px;
+    height: 1000px;
     margin-right: -50%;
     transform: translate(-50%, -50%);
     background-image: url("https://www.blackpast.org/wp-content/uploads/Sol-Plaatje-University-Plaatje-University-Library-180315_059.jpg");
@@ -12,14 +12,10 @@
     align-items: center;
     justify-content: center;
 }
-.form-group
-{
-  color: black;
-  font-weight: bold;
-}
+
 .card-title
 {
-    color:  #1f1d19ef;
+    color:  #f5a61fef;
     text-align: center;
     font-weight: bold;
     font-size: 50px;
@@ -48,5 +44,10 @@ backdrop-filter: blur(5px);
   .modal.show
   {
     display: block;
+  }
+  .card.body
+  {
+    align-items: center;
+    text-align: center;
   }
 

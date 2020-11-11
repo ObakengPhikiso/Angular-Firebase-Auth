@@ -1,31 +1,126 @@
+<div class="bg-img">
+  
+    <p class="title">Welcome to the <br/>Sol Plaatje University Tutor Appointment Form <br/>
+    Registration Page </p>
+</div>
+
+
+<section  class="login-block container-fluid">
+    <div id="container">
+        <div class="row">
+            <div class="col-md-4 login-sec">
+                <h2 class="text-center">Please enter your credentials to Register/ Sign up</h2>
+
 <form [formGroup]="form" class="mt-5">
 
     <div class="form-group">
-        <label for="name">name</label>
+        <label for="name">Name</label>
         <input type="text" class="form-control" formControlName="name" aria-describedby="nameHelpId" placeholder="">
-        <small id="nameHelpId" class="form-text text-muted">Help text</small>
+        
     </div>
 
     <div class="form-group">
-        <label for="surname">surname</label>
+        <label for="surname">Surname</label>
         <input type="text" class="form-control" formControlName="surname" aria-describedby="surnameHelpId"
             placeholder="">
-        <small id="surnameHelpId" class="form-text text-muted">Help text</small>
+        
     </div>
 
     <div class="form-group">
-        <label for="email">email</label>
+        <label for="email">Email Address/ Username</label>
         <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelpId" placeholder="">
-        <small id="emailHelpId" class="form-text text-muted">Help text</small>
+        
     </div>
     <div class="form-group">
         <label for="password">Password</label>
         <input type="password" class="form-control" formControlName="password">
     </div>
-    <button type="submit" (click)="register(form.value)" class="btn btn-primary">Register</button>
+    <button type="submit" (click)="register(form.value)" class="btn btn-warning">Register</button>
 </form>
 <div class="row mt-5">
     <div class="col">
         <a [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a>
     </div>
 </div>
+</div>
+<div class="col-md-8 banner-sec">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+         <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+          </ol>
+    <div class="carousel-inner" role="listbox">
+<div class="carousel-item active">
+<img class="d-block img-fluid w-100" src="../../../assets/Login/img12.jpg" alt="First slide">
+<div class="carousel-caption d-none d-md-block">
+<div class="banner-text">
+</div>
+</div>
+</div>
+<div class="carousel-item">
+<img class="d-block img-fluid w-100" src="../../../assets/Login/img8.jpg" alt="Second slide">
+<div class="carousel-caption d-none d-md-block">
+<div class="banner-text">
+</div>
+</div>
+</div>
+
+<div class="carousel-item">
+<img class="d-block img-fluid w-100" src="../../../assets/Login/img9.jpg" alt="Second slide">
+<div class="carousel-caption d-none d-md-block">
+<div class="banner-text">
+</div>
+</div>
+</div>
+
+<div class="carousel-item">
+<img class="d-block img-fluid w-100" src="../../../assets/Login/img10.jpg" alt="Second slide">
+<div class="carousel-caption d-none d-md-block">
+<div class="banner-text">
+</div>
+</div>
+</div>
+
+<div class="carousel-item">
+<img class="d-block img-fluid w-100" src="../../../assets/Login/img7.jpg" alt="Second slide">
+<div class="carousel-caption d-none d-md-block">
+<div class="banner-text">
+</div>
+</div>
+</div>
+
+<div class="carousel-item">
+<img class="d-block img-fluid w-100" src="../../../assets/Login/card1.jpg" alt="Second slide">
+<div class="carousel-caption d-none d-md-block">
+<div class="banner-text">
+</div>
+</div>
+</div>
+
+<div class="carousel-item">
+<img class="d-block img-fluid w-100" src="../../../assets/Login/img16.jpeg" alt="Third slide">
+<div class="carousel-caption d-none d-md-block">
+<div class="banner-text">
+   </div>
+</div>
+</div>
+
+<div class="carousel-item">
+<img class="d-block img-fluid w-100" src="../../../assets/Login/img15.jpeg" alt="Forth slide">
+<div class="carousel-caption d-none d-md-block">
+<div class="banner-text">
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</section>

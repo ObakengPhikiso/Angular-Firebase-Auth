@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
-import { AuthRegister, AuthLogin } from '../interfaces/auth';
+import { AuthRegister, AuthLogin, form } from '../interfaces/auth';
+
+import { Observable } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  formCollection: AngularFirestoreCollection<form>;
+  items : Observable<form[]>;
 
   constructor(private afireAuth: AngularFireAuth, private aFire: AngularFirestore, private router: Router) { }
 
@@ -30,4 +35,6 @@ export class AuthService {
       });
     });
   }
+ 
+  
 }
