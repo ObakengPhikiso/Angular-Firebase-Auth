@@ -13,18 +13,31 @@
 
                 <h2 class="text-center">Please enter your credentials to login or Register</h2>
 
-<form [formGroup]="form" class="mt-5">
-    <div class="form-group">
-        <label for="email">Username(spu email address)</label>
-        <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelpId" placeholder="">
-        
+<form [formGroup]="form" class="mt-5" (ngSubmit)="form.valid && onSubmit()">
+
+
+    <div class="form-group"  >
+        <label for="email">Username/ Email Address</label>
+        <input type="email"   name="email" class="form-control" formControlName="email" formControlName="email"  [ngClass]= "{'is-invalid': form.get('email').touched && form.get('email').invalid }"  aria-describedby="emailHelpId" placeholder="">
+        <div *ngIf="form.get('email').touched && form.get('email').invalid" class="invalid-feedback">
+            <div *ngIf="form.get('email').errors.required"> Email address is required 
+            </div>
+            <div *ngIf="form.get('email').errors.email"> Email must be a valid SPU email address is required 
+            </div>
+    </div>
     </div>
 
     <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" class="form-control" formControlName="password">
+        <input type="password" class="form-control" formControlName="password" [ngClass]= "{'is-invalid': form.get('password').touched && form.get('password').invalid }">
+        <div *ngIf="form.get('password').touched && form.get('password').invalid"  class="invalid-feedback">
+            <div *ngIf="form.get('password').errors.required"> Password is required
+            </div>
+            <div *ngIf="form.get('password').errors.minlength"> Password must be at least 6 characters
+            </div>
+        </div>
     </div>
-    <button type="submit" (click)="login(form.value)" class="btn btn-warning">Login</button>
+    <button type="submit" (click)="login(form.value)" [disabled]= "!form.valid" class="btn btn-warning">Login</button>
 </form>
 <div class="row mt-5">
     <div class="col">

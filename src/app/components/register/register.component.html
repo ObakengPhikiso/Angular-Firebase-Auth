@@ -11,31 +11,46 @@
             <div class="col-md-4 login-sec">
                 <h2 class="text-center">Please enter your credentials to Register/ Sign up</h2>
 
-<form [formGroup]="form" class="mt-5">
+<form [formGroup]="form" class="mt-5" (ngSubmit)="form.valid && onSubmit()">
 
     <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" class="form-control" formControlName="name" aria-describedby="nameHelpId" placeholder="">
-        
+        <input type="text" class="form-control" formControlName="name" [ngClass]= "{'is-invalid': form.get('name').touched && form.get('name').invalid }" aria-describedby="nameHelpId" placeholder="">
+        <div class="invalid-feedback">
+        <div> Name is required </div>
+        </div>
     </div>
 
     <div class="form-group">
         <label for="surname">Surname</label>
-        <input type="text" class="form-control" formControlName="surname" aria-describedby="surnameHelpId"
+        <input type="text" class="form-control" formControlName="surname" [ngClass]= "{'is-invalid': form.get('surname').touched && form.get('surname').invalid }" aria-describedby="surnameHelpId"
             placeholder="">
-        
+            <div class="invalid-feedback">
+                <div> Surname is required </div>
+                </div> 
     </div>
 
     <div class="form-group">
         <label for="email">Email Address/ Username</label>
-        <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelpId" placeholder="">
-        
+        <input type="email" class="form-control" formControlName="email"  [ngClass]= "{'is-invalid': form.get('email').touched && form.get('email').invalid }" aria-describedby="emailHelpId" placeholder="">
+        <div *ngIf="form.get('email').touched && form.get('email').invalid" class="invalid-feedback">
+            <div *ngIf="form.get('email').errors.required"> Email address is required 
+            </div>
+            <div *ngIf="form.get('email').errors.email"> Email must be a valid SPU email address is required 
+            </div>
     </div>
+</div>
     <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" class="form-control" formControlName="password">
+        <input type="password" class="form-control" formControlName="password" [ngClass]= "{'is-invalid': form.get('password').touched && form.get('password').invalid }">
+        <div *ngIf="form.get('password').touched && form.get('password').invalid"  class="invalid-feedback">
+            <div *ngIf="form.get('password').errors.required"> Password is required
+            </div>
+            <div *ngIf="form.get('password').errors.minlength"> Password must be at least 6 characters
+            </div>
+        </div>
     </div>
-    <button type="submit" (click)="register(form.value)" class="btn btn-warning">Register</button>
+    <button type="submit" (click)="register(form.value)" [disabled]= "!form.valid" class="btn btn-warning">Register</button>
 </form>
 <div class="row mt-5">
     <div class="col">

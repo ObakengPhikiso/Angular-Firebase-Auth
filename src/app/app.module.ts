@@ -11,6 +11,9 @@ import { AuthService } from './services/auth.service';
 import { HomeComponent } from './components/home/home.component';
 import { ThanksComponent } from './components/thanks/thanks.component';
 import {  AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +25,7 @@ import {  AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fir
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],

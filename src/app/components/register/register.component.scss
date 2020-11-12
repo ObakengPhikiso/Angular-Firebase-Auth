@@ -64,6 +64,10 @@ input[type=text], input[type=password] {
     margin-bottom: 3%;
     border-radius: 0.5rem;
     }
+    .invalid-feedback
+    {
+      font-size: medium;
+    }
 
   #container{background:#fff; border-radius: 10px;}
   .login-sec{padding: 50px 30px; position:absolute;width:80%; bottom:20px; font-size:13px; text-align:center;}

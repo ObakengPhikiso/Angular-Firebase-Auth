@@ -12,8 +12,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private readonly authService: AuthService) { }
   form = new FormGroup({
-    email: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required])
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)])
   });
   ngOnInit(): void {
 
@@ -21,5 +21,10 @@ export class LoginComponent implements OnInit {
 
   login(data: AuthLogin): any {
     this.authService.login(data);
+  }
+
+  onSubmit()
+  {
+    alert(JSON.stringify(this.form.value))
   }
 }

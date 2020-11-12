@@ -15,8 +15,22 @@ export class HomeComponent implements OnInit {
 
   constructor(private readonly authService: AuthService, private fb: FormBuilder, private firestore: AngularFirestore) { }
   form = new FormGroup({
-    email: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required])
+    school: new FormControl('', [Validators.required]),
+    department: new FormControl('', [Validators.required]),
+    moduleCode: new FormControl('', [Validators.required]),
+    moduleName: new FormControl('', [Validators.required]),
+    moduleDetails: new FormControl('', [Validators.required]),
+    moduleLecture: new FormControl('', [Validators.required]),
+    moduleYear: new FormControl('', [Validators.required]),
+    studentEnrolled: new FormControl('', [Validators.required]),
+    reasonRequest: new FormControl('', [Validators.required]),
+    yearStudy: new FormControl('', [Validators.required]),
+    tutorName: new FormControl('', [Validators.required]),
+    tutorSurname: new FormControl('', [Validators.required]),
+    studentNum: new FormControl('', [Validators.required]),
+    numHours: new FormControl('', [Validators.required]),
+    sessionNum: new FormControl('', [Validators.required])
+   
   });
   ourForm : FormGroup;
 
@@ -35,7 +49,9 @@ export class HomeComponent implements OnInit {
       tutorSurname: ['',Validators.required],
       studentNum: ['',Validators.required],
       sessionNum: ['',Validators.required],
-      numHours: ['',Validators.required]
+      numHours: ['',Validators.required],
+      school: ['',Validators.required],
+      department: ['',Validators.required]
      
 
     });
@@ -47,6 +63,11 @@ export class HomeComponent implements OnInit {
   this.submmisionForm.add(value).then(res =>{
   console.log('Request added') ; 
   }).catch(err => console.log(err));
+    }
+
+    onSubmit()
+    {
+      alert(JSON.stringify(this.form.value))
     }
 
 }

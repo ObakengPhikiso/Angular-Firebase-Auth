@@ -22,5 +22,8 @@ export interface form
  tutorSurname : string;
  studentNum : number;
  sessionNum : number;
- numHours : number;   
+ numHours : number; 
+ school: string;
+department: String;
+       
 }
