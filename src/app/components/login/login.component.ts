@@ -25,6 +25,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit()
   {
-    alert(JSON.stringify(this.form.value))
+   
   }
 }

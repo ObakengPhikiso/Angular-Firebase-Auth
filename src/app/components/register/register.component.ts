@@ -26,6 +26,6 @@ export class RegisterComponent implements OnInit {
 
   onSubmit()
   {
-    alert(JSON.stringify(this.form.value))
+  
   }
 }

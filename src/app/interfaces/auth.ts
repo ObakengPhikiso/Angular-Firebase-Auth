@@ -11,19 +11,25 @@ export interface AuthLogin {
 }
 export interface form
 {
- moduleCode : string;
+
+department: String;
+school: string;
  moduleName : string;
- moduleDetals : string;
+
+ moduleCode : string;
+
+ 
  moduleLecture : string;
- moduleYear : number;
+ moduleYear : Number;
  studentEnrolled : number;
  reasonRequest : string;
  tutorName : string;
  tutorSurname : string;
  studentNum : number;
- sessionNum : number;
- numHours : number; 
- school: string;
-department: String;
+ sessionNum : Number;
+ numHours : Number; 
+ yearStudy: Number
+ 
+
        
 }

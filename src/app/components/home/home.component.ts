@@ -37,21 +37,21 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.submmisionForm = this.firestore.collection('Submissions');
     this.ourForm = this.fb.group({
-      moduleCode: ['',Validators.required],
+      department: ['',Validators.required],
+      school: ['',Validators.required],
       moduleName: ['',Validators.required],
-      moduleDetails: ['',Validators.required],
-      moduleLecture: ['',Validators.required],
+       moduleCode: ['',Validators.required],
+     
+       moduleLecture: ['',Validators.required],
       moduleYear: ['',Validators.required],
       studentEnrolled: ['',Validators.required],
       reasonRequest: ['',Validators.required],
-      yearStudy: ['',Validators.required],
       tutorName: ['',Validators.required],
       tutorSurname: ['',Validators.required],
       studentNum: ['',Validators.required],
-      sessionNum: ['',Validators.required],
-      numHours: ['',Validators.required],
-      school: ['',Validators.required],
-      department: ['',Validators.required]
+      yearStudy: ['',Validators.required],
+       sessionNum: ['',Validators.required],
+      numHours: ['',Validators.required]
      
 
     });
