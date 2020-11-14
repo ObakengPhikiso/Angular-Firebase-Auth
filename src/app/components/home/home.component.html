@@ -7,7 +7,7 @@
             <h5 class="card-title">Tutor Request Form</h5>
 
             <p class="card-text"></p>
-            <form [formGroup]="ourForm" class="mt-5" >
+            <form [formGroup]="ourForm" class="mt-5" (ngSubmit)="ourForm.valid && onSubmit()">
 
                 <h3>Module Details</h3>
                 <br/>
@@ -16,14 +16,15 @@
 
                   <div class="form-group col-md-5" >
                     <label for="inputState">Please select School</label>
-                    <select id="inputState" class="form-control" formControlName="school" [ngClass]= "{'is-invalid': form.get('school').touched && form.get('school').invalid }">
+                    <select id="inputState" class="form-control" formControlName="school" [ngClass]= "{'is-invalid': ourForm.get('school').touched  && ourForm.get('school').invalid }">
+                      
                       
                       <option>NAS</option>
                       <option>EMS</option>
                       <option>EDU</option>
                       <option>HUM</option>
                     </select>
-                    <div class="invalid-feedback">
+                    <div class="invalid-feedback"  >
                       <div> School is required </div>
                       </div>
                   </div>
@@ -32,7 +33,7 @@
                   <div class="form-group col-md-5">
                 
                     <label for="inputEmail4">Department</label>
-                    <input type="email" class="form-control" id="inputEmail4" formControlName="department" [ngClass]= "{'is-invalid': form.get('department').touched && form.get('department').invalid }">
+                    <input type="email" class="form-control" id="inputEmail4" formControlName="department" [ngClass]= "{'is-invalid': ourForm.get('department').touched && ourForm.get('department').invalid }">
                     <div class="invalid-feedback">
                       <div> Department is required </div>
                       </div>
@@ -41,7 +42,7 @@
                     <div class="form-group col-md-5">
                 
                         <label for="inputEmail4">Module Code</label>
-                        <input type="email" class="form-control" id="inputEmail4" formControlName="moduleCode" [ngClass]= "{'is-invalid': form.get('moduleCode').touched && form.get('moduleCode').invalid }" >
+                        <input type="email" class="form-control" id="inputEmail4" formControlName="moduleCode" [ngClass]= "{'is-invalid': ourForm.get('moduleCode').touched && ourForm.get('moduleCode').invalid }" >
                         <div class="invalid-feedback">
                           <div> Module Code is required </div>
                           </div>
@@ -50,7 +51,7 @@
                       <div class="form-group col-md-5">
                 
                         <label for="inputEmail4">Module Name</label>
-                        <input type="email" class="form-control" id="inputEmail4" formControlName="moduleName" [ngClass]= "{'is-invalid': form.get('moduleName').touched && form.get('moduleName').invalid }" >
+                        <input type="email" class="form-control" id="inputEmail4" formControlName="moduleName" [ngClass]= "{'is-invalid': ourForm.get('moduleName').touched && ourForm.get('moduleName').invalid }" >
                         <div class="invalid-feedback">
                           <div> Module Name is required </div>
                           </div>
@@ -61,7 +62,7 @@
                       <div class="form-group col-md-5">
                       
                         <label for="inputEmail4">Module Lecturer</label>
-                        <input type="email" class="form-control" id="inputEmail4" formControlName="moduleLecture" [ngClass]= "{'is-invalid': form.get('moduleLecture').touched && form.get('moduleLecture').invalid }">
+                        <input type="email" class="form-control" id="inputEmail4" formControlName="moduleLecture" [ngClass]= "{'is-invalid': ourForm.get('moduleLecture').touched && ourForm.get('moduleLecture').invalid }">
                         <div class="invalid-feedback">
                           <div> Module Lecturer is required </div>
                           </div>
@@ -69,7 +70,7 @@
 
                       <div class="form-group col-md-5" >
                         <label for="inputState">Module Type</label>
-                        <select id="inputState" class="form-control" formControlName="moduleYear" [ngClass]= "{'is-invalid': form.get('moduleYear').touched && form.get('moduleYear').invalid }">
+                        <select id="inputState" class="form-control" formControlName="moduleYear" [ngClass]= "{'is-invalid': ourForm.get('moduleYear').touched && ourForm.get('moduleYear').invalid }">
                           
                           <option>Year Module</option>
                           <option>First Semester Module</option>
@@ -83,7 +84,7 @@
                         <div class="form-group col-md-5">
                 
                         <label for="inputEmail4">Number of Students Enrolled</label>
-                        <input type="email" class="form-control" id="inputEmail4" formControlName="studentEnrolled" [ngClass]= "{'is-invalid': form.get('studentEnrolled').touched && form.get('studentEnrolled').invalid }">
+                        <input type="email" class="form-control" id="inputEmail4" formControlName="studentEnrolled" [ngClass]= "{'is-invalid': ourForm.get('studentEnrolled').touched && ourForm.get('studentEnrolled').invalid }">
                         <div class="invalid-feedback">
                           <div> Number of Students Enrolled is required </div>
                           </div>
@@ -94,7 +95,7 @@
                       <div class="form-group col-md-10 ">
                 
                         <label for="inputEmail4">Reason(s) for Request </label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="reasonRequest" [ngClass]= "{'is-invalid': form.get('reasonRequest').touched && form.get('reasonRequest').invalid }"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="reasonRequest" [ngClass]= "{'is-invalid': ourForm.get('reasonRequest').touched && ourForm.get('reasonRequest').invalid }"></textarea>
                         <div class="invalid-feedback">
                           <div> Reason(s) for Request is required </div>
                           </div>
@@ -106,7 +107,7 @@
 
             </form>
 
-            <form [formGroup]="ourForm" class="mt-5" >
+            <form [formGroup]="ourForm" class="mt-5"  (ngSubmit)="ourForm.valid && onSubmit()">
 
                 <h2>Tutor's Details</h2>
             <br/>
@@ -116,7 +117,7 @@
                 <div class="form-group col-md-5">
                 
                     <label for="inputEmail4">Tutor's Name</label>
-                    <input type="email" class="form-control" id="inputEmail4" formControlName="tutorName"  [ngClass]= "{'is-invalid': form.get('tutorName').touched && form.get('tutorName').invalid }" >
+                    <input type="email" class="form-control" id="inputEmail4" formControlName="tutorName"  [ngClass]= "{'is-invalid': ourForm.get('tutorName').touched && ourForm.get('tutorName').invalid }" >
                     <div class="invalid-feedback">
                       <div> Tutor's Name is required </div>
                       </div>
@@ -125,7 +126,7 @@
                   <div class="form-group col-md-5">
                 
                     <label for="inputEmail4">Tutor's Surname</label>
-                    <input type="email" class="form-control" id="inputEmail4" formControlName="tutorSurname" [ngClass]= "{'is-invalid': form.get('tutorSurname').touched && form.get('tutorSurname').invalid }">
+                    <input type="email" class="form-control" id="inputEmail4" formControlName="tutorSurname" [ngClass]= "{'is-invalid': ourForm.get('tutorSurname').touched && ourForm.get('tutorSurname').invalid }">
                     <div class="invalid-feedback">
                       <div> Tutor's Surname is required </div>
                       </div>
@@ -134,7 +135,7 @@
                   <div class="form-group col-md-5">
                 
                     <label for="inputEmail4">Tutor's Student Number</label>
-                    <input type="email" class="form-control" id="inputEmail4" formControlName="studentNum" [ngClass]= "{'is-invalid': form.get('studentNum').touched && form.get('studentNum').invalid }">
+                    <input type="email" class="form-control" id="inputEmail4" formControlName="studentNum" [ngClass]= "{'is-invalid': ourForm.get('studentNum').touched && ourForm.get('studentNum').invalid }">
                     <div class="invalid-feedback">
                       <div> Tutor's Student Number is required </div>
                       </div>
@@ -142,7 +143,7 @@
 
                   <div class="form-group col-md-5">
                     <label for="inputState">Year of Study</label>
-                    <select id="inputState" class="form-control" formControlName="yearStudy" [ngClass]= "{'is-invalid': form.get('yearStudy').touched && form.get('yearStudy').invalid }">
+                    <select id="inputState" class="form-control" formControlName="yearStudy" [ngClass]= "{'is-invalid': ourForm.get('yearStudy').touched && ourForm.get('yearStudy').invalid }">
                     
                       
                       <option>First Year</option>
@@ -158,7 +159,7 @@
                   <div class="form-group col-md-5">
                 
                     <label for="inputEmail4">Number of Session(s) per week </label>
-                    <input type="email" class="form-control" id="inputEmail4" formControlName="sessionNum"  [ngClass]= "{'is-invalid': form.get('sessionNum').touched && form.get('sessionNum').invalid }">
+                    <input type="email" class="form-control" id="inputEmail4" formControlName="sessionNum"  [ngClass]= "{'is-invalid': ourForm.get('sessionNum').touched && ourForm.get('sessionNum').invalid }">
                     <div class="invalid-feedback">
                       <div> Number of Session(s) per week is required </div>
                       </div>
@@ -167,7 +168,7 @@
                   <div class="form-group col-md-5">
                 
                     <label for="inputEmail4">Number of Hour(s) per week </label>
-                    <input type="email" class="form-control" id="inputEmail4" formControlName="numHours" [ngClass]= "{'is-invalid': form.get('numHours').touched && form.get('numHours').invalid }">
+                    <input type="email" class="form-control" id="inputEmail4" formControlName="numHours" [ngClass]= "{'is-invalid': ourForm.get('numHours').touched && ourForm.get('numHours').invalid }">
                     <div class="invalid-feedback">
                       <div> Number of Hour(s) per week is required </div>
                       </div>
@@ -182,7 +183,7 @@
             <br/>
             <br/>
 
-            <button   class="button" (click)="submitData(ourForm.value)" [routerLink]="['/Submit']" routerLinkActive="router-link-active" >Submit</button>
+            <button   class="button" (click)="submitData(ourForm.value)" [routerLink]="['/Submit']" routerLinkActive="router-link-active" [disabled]= "!ourForm.valid" >Submit</button>
   
             <button [routerLink]="['/login']" routerLinkActive="router-link-active" class="button">Logout</button>
         </div>
