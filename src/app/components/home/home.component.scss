@@ -12,7 +12,11 @@
     align-items: center;
     justify-content: center;
 }
-
+.input[type=text], input[type=nameOfSender]
+{
+  text-align:center;
+  display: block;
+}
 .invalid-feedback
     {
       font-size: medium;

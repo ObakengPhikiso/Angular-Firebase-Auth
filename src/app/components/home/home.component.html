@@ -11,6 +11,15 @@
 
                 <h3>Module Details</h3>
                 <br/>
+               <!--<div class="form-group col-md-10">
+                
+                  <label for="inputEmail4">Sender's Name and Surname</label>
+                  <input type="text" class="form-control" id="nameOfSender" formControlName="nameOfSender" [ngClass]= "{'is-invalid': ourForm.get('nameOfSender').touched && ourForm.get('nameOfSender').invalid }">
+                  <div class="invalid-feedback">
+                    <div> Sender's Name and Surname is required </div>
+                    </div>
+                </div>--> 
+
 
                 <div class="form-row">
 
@@ -25,6 +34,7 @@
                       <option>HUM</option>
                     </select>
                     <div class="invalid-feedback"  >
+                      
                       <div> School is required </div>
                       </div>
                   </div>
@@ -33,7 +43,7 @@
                   <div class="form-group col-md-5">
                 
                     <label for="inputEmail4">Department</label>
-                    <input type="email" class="form-control" id="inputEmail4" formControlName="department" [ngClass]= "{'is-invalid': ourForm.get('department').touched && ourForm.get('department').invalid }">
+<input type="email" class="form-control" id="inputEmail4" formControlName="department" [ngClass]= "{'is-invalid': ourForm.get('department').touched && ourForm.get('department').invalid }">
                     <div class="invalid-feedback">
                       <div> Department is required </div>
                       </div>
@@ -183,7 +193,7 @@
             <br/>
             <br/>
 
-            <button   class="button" (click)="submitData(ourForm.value)" [routerLink]="['/Submit']" routerLinkActive="router-link-active" [disabled]= "!ourForm.valid" >Submit</button>
+            <button   type ="submit"  class="button" (click)="submitData(ourForm.value)" [routerLink]="['/Submit']" routerLinkActive="router-link-active" [disabled]= "!ourForm.valid" >Submit</button>
   
             <button [routerLink]="['/login']" routerLinkActive="router-link-active" class="button">Logout</button>
         </div>

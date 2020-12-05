@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { AuthRegister, AuthLogin, form } from '../interfaces/auth';
-
 import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,13 @@ import { Observable } from 'rxjs';
 export class AuthService {
   formCollection: AngularFirestoreCollection<form>;
   items : Observable<form[]>;
+  
+
+  
 
   constructor(private afireAuth: AngularFireAuth, private aFire: AngularFirestore, private router: Router) { }
+
+ 
 
   login(data: AuthLogin): any {
     return this.afireAuth.signInWithEmailAndPassword(data.email, data.password).then((user) => {
@@ -37,4 +43,5 @@ export class AuthService {
   }
  
   
+
 }

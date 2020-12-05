@@ -14,6 +14,8 @@ import {  AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fir
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,4 +34,4 @@ import {  AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fir
   providers: [AuthService, AngularFirestore],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { private firestore: AngularFirestore }

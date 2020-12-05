@@ -20,9 +20,7 @@ const routes: Routes = [
   {
     path: 'home', component: HomeComponent, pathMatch: 'full'
   },
-  {
-    path: 'thanks', component: ThanksComponent, pathMatch: 'full'
-  },
+  
   {
     path: 'login', redirectTo: '', pathMatch: 'full'
   }

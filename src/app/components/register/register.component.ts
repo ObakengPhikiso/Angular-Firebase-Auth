@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { AuthRegister } from 'src/app/interfaces/auth';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-register',
@@ -28,4 +29,6 @@ export class RegisterComponent implements OnInit {
   {
   
   }
+ 
+ 
 }
