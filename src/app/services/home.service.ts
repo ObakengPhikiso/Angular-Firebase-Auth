@@ -3,7 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
-import {  form } from '../interfaces/auth';
+import { form } from '../interfaces/auth';
 import { Observable } from 'rxjs';
 
 
@@ -13,13 +13,16 @@ import { Observable } from 'rxjs';
 })
 export class HomeService {
   formCollection: AngularFirestoreCollection<form>;
-  items : Observable<form[]>;
+  items: Observable<form[]>;
+  uid;
 
+  constructor(private afireAuth: AngularFireAuth, private aFire: AngularFirestore, private router: Router) {
+    this.uid = localStorage.getItem('uid');
 
-  constructor( private afireAuth: AngularFireAuth, private aFire: AngularFirestore, private router: Router) { }
+  }
 
   submitData(data: form): Promise<any> {
-    return this.aFire.collection('Submissions').doc(JSON.stringify(data.studentNum)).set(data);
+    return this.aFire.collection('Submissions').doc(JSON.stringify(this.uid)).set(data);
   }
-  
+
 }
