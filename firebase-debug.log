@@ -1,0 +1,84 @@
+[debug] [2020-12-07T07:16:28.506Z] ----------------------------------------------------------------------
+[debug] [2020-12-07T07:16:28.508Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2020-12-07T07:16:28.508Z] CLI Version:   8.4.2
+[debug] [2020-12-07T07:16:28.509Z] Platform:      darwin
+[debug] [2020-12-07T07:16:28.509Z] Node Version:  v12.18.0
+[debug] [2020-12-07T07:16:28.510Z] Time:          Mon Dec 07 2020 09:16:28 GMT+0200 (South Africa Standard Time)
+[debug] [2020-12-07T07:16:28.510Z] ----------------------------------------------------------------------
+[debug] [2020-12-07T07:16:28.510Z] 
+[debug] [2020-12-07T07:16:28.521Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-12-07T07:16:28.522Z] > authorizing via signed-in user
+[debug] [2020-12-07T07:16:28.522Z] [iam] checking project spu-form for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-12-07T07:16:28.524Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-12-07T07:16:28.524Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-12-07T07:16:28.992Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Mon, 07 Dec 2020 07:16:28 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-12-07T07:16:29.002Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/spu-form:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-12-07T07:16:31.033Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 07 Dec 2020 07:16:30 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1583","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-12-07T07:16:31.034Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project spu-form:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2020-12-07T07:16:31.035Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/spu-form  
+ 
+[debug] [2020-12-07T07:16:31.852Z] <<< HTTP RESPONSE 403 {"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Mon, 07 Dec 2020 07:16:31 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-12-07T07:16:31.852Z] <<< HTTP RESPONSE BODY {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2020-12-07T07:16:31.854Z] HTTP Error: 403, The caller does not have permission
+[debug] [2020-12-07T07:16:32.217Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (/usr/local/lib/node_modules/firebase-tools/lib/responseToError.js:38:12)
+    at Request._callback (/usr/local/lib/node_modules/firebase-tools/lib/api.js:41:35)
+    at Request.self.callback (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:315:20)
+    at Request.EventEmitter.emit (domain.js:482:12)
+    at Request.<anonymous> (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:1154:10)
+    at Request.emit (events.js:315:20)
+    at Request.EventEmitter.emit (domain.js:482:12)
+    at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (events.js:421:28)
+    at IncomingMessage.emit (events.js:327:22)
+    at IncomingMessage.EventEmitter.emit (domain.js:482:12)
+    at endReadableNT (_stream_readable.js:1221:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+[error] 
+[error] Error: Failed to get Firebase project spu-form. Please make sure the project exists and your account has permission to access it.
+[debug] [2020-12-07T07:17:23.546Z] ----------------------------------------------------------------------
+[debug] [2020-12-07T07:17:23.548Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2020-12-07T07:17:23.548Z] CLI Version:   8.17.0
+[debug] [2020-12-07T07:17:23.548Z] Platform:      darwin
+[debug] [2020-12-07T07:17:23.548Z] Node Version:  v12.18.0
+[debug] [2020-12-07T07:17:23.549Z] Time:          Mon Dec 07 2020 09:17:23 GMT+0200 (South Africa Standard Time)
+[debug] [2020-12-07T07:17:23.549Z] ----------------------------------------------------------------------
+[debug] [2020-12-07T07:17:23.550Z] 
+[debug] [2020-12-07T07:17:23.557Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-12-07T07:17:23.558Z] > authorizing via signed-in user
+[debug] [2020-12-07T07:17:23.558Z] [iam] checking project spu-form for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-12-07T07:17:23.561Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/spu-form:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-12-07T07:17:25.347Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 07 Dec 2020 07:17:25 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1565","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-12-07T07:17:25.348Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project spu-form:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2020-12-07T07:17:25.349Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/spu-form  
+ 
+[debug] [2020-12-07T07:17:25.905Z] <<< HTTP RESPONSE 403 {"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Mon, 07 Dec 2020 07:17:25 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-12-07T07:17:25.906Z] <<< HTTP RESPONSE BODY {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2020-12-07T07:17:25.907Z] HTTP Error: 403, The caller does not have permission
+[debug] [2020-12-07T07:17:26.276Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (/usr/local/lib/node_modules/firebase-tools/lib/responseToError.js:38:12)
+    at Request._callback (/usr/local/lib/node_modules/firebase-tools/lib/api.js:41:35)
+    at Request.self.callback (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:315:20)
+    at Request.EventEmitter.emit (domain.js:482:12)
+    at Request.<anonymous> (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:1154:10)
+    at Request.emit (events.js:315:20)
+    at Request.EventEmitter.emit (domain.js:482:12)
+    at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (events.js:421:28)
+    at IncomingMessage.emit (events.js:327:22)
+    at IncomingMessage.EventEmitter.emit (domain.js:482:12)
+    at endReadableNT (_stream_readable.js:1221:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+[error] 
+[error] Error: Failed to get Firebase project spu-form. Please make sure the project exists and your account has permission to access it.
