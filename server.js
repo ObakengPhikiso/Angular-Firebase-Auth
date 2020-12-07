@@ -1,7 +1,5 @@
 const express = require('express')
-const path = require('path')
-const app = express()
-console.log('running');
+const app = express();
 app.use(express.static('./dist/firebase-auth"'));
 app.get('/*', function(req, res) {
   res.sendFile('index.html', {root: 'dist/firebase-auth"/'}
