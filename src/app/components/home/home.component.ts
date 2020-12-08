@@ -5,6 +5,7 @@ import { HomeService } from '../../services/home.service';
 import { AuthLogin } from 'src/app/interfaces/auth';
 import { form } from 'src/app/interfaces/auth';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 
 
 
@@ -17,7 +18,8 @@ export class HomeComponent implements OnInit {
 
 
 
-  constructor(private readonly authService: HomeService, private fb: FormBuilder, private firestore: AngularFirestore) {
+  constructor(private readonly authService: HomeService, private fb: FormBuilder,
+    private firestore: AngularFirestore, private router: Router) {
 
 
   }
@@ -49,7 +51,7 @@ export class HomeComponent implements OnInit {
 
   submitData(data: form): any {
     this.authService.submitData(data).then(() => {
-      console.log('created');
+      this.router.navigate(['/Submit']);
     }).catch(err => {
       console.log(err.message);
     });
